@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.functions import Length
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -30,11 +31,14 @@ class Product(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse('products:product_detail', kwargs={'category': self.category, 'id': self.id})
+
     def serialized(self):
         return {
             'title': self.title,
             'image': self.image,
-            'link': self.get_absolute_url()
+            'link' : self.get_absolute_url()
         }
 
     @classmethod
@@ -43,7 +47,7 @@ class Product(models.Model):
 
     @classmethod
     def get_products(cls, category_name):
-        category = get_object_or_404(Category, kwargs={'name':category_name})
+        category = get_object_or_404(Category, kwargs={'name': category_name})
         return cls.objects.filter(category=category)
 
     @classmethod

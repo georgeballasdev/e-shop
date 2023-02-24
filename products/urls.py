@@ -6,6 +6,6 @@ app_name = 'products'
 urlpatterns = [
     path('', views.home, name='home'),
     path('<str:category>/', views.category, name='category'),
-    path('product/<int:id>/', views.ProductDetail.as_view(), name='product_detail'),
+    path('<str:category>/<int:id>/', views.ProductDetail.as_view(), name='product_detail'),
     path('search/', views.search, name='search')
 ]

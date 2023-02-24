@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.views.generic import DetailView
 from .models import Product
 
@@ -22,3 +22,6 @@ def search(request):
 class ProductDetail(DetailView):
     model = Product
     template_name = 'products/detail.html'
+
+    def get_object(self, *args):
+        return get_object_or_404(Product, id=self.kwargs['id'])
