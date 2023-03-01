@@ -1,4 +1,6 @@
 :root {
+    --color-main: #98BFCB;
+    --color-accent: #FAF9F5;
     --font-main: san-serif;
     font-size: 24px;
 }
@@ -22,17 +24,24 @@ ul {
 
 body {
     display: flex;
-    flex-direction: column;
     overflow: hidden;
+    background-color: var(--color-accent);
 }
 
 .topbar {
-    padding: 1rem 2rem;
+    padding: 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    column-gap: 10%;
     font-size: 2rem;
     background: transparent;
+}
+
+.material-symbols-outlined {
+    transform: scale(2.25);
+    color: var(--color-main);
+    text-shadow: 0 .5px 2px darkblue;
 }
 
 .search {
@@ -48,18 +57,23 @@ input[type=search] {
 }
 
 .container {
-    height: 100%;
+    width: 100%;
     display: flex;
+    flex-direction: column;
 }
 
 .sidebar {
-    padding: 2rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border-top-right-radius: 30px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.706), transparent);
+    background: var(--color-main);
+    box-shadow: 0 0 5px black;
+}
+
+.logo {
+    border-radius: 50%;
 }
 
 .sidebar__top,
@@ -76,14 +90,65 @@ input[type=search] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 4rem;
+    row-gap: 2rem;
 }
 
 .featured-products {
     width: 90%;
     display: flex;
     justify-content: center;
-    background-color: blue;
+    align-items: center;
+}
+
+.featured-product {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.featured-product:hover .product-image{
+    transform: scale(1.2);
+    opacity: .75;
+}
+
+.featured-product:hover .product-info{
+    opacity: 1;
+}
+
+.product-image {
+    height: 250px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    transition: .3s ease-in;
+}
+
+.product-info {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding-top: 30%;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    background: linear-gradient(to top, var(--color-main) 20%, transparent);
+    text-shadow: 0 1px 2px var(--color-accent);
+    text-align: center;
+    color: black;
+    opacity: 0;
+    transition: opacity .3s ease-in .1s;
+}
+
+.product-title {
+    font-size: 1.5rem;
+}
+
+.product-price {
+
 }
 
 .welcome {

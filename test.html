@@ -6,42 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <div class="topbar">
-        <i>LOGO</i>
-        <div class="search">
-            <i>ICON</i>
-            <input type="search">
+    <div class="sidebar">
+        <img class="logo" src="static/logo.png" alt="">
+        <div class="sidebar__top">
+            <h2>Categories</h2>
+            <ul class="category-list">
+                <li class="category">Category</li>
+                <li class="category">Category</li>
+                <li class="category">Category</li>
+                <li class="category">Category</li>
+            </ul>
         </div>
-        <div class="basket">
-            <i>BASKET</i>
-            <i>n</i>
+        <div class="sidebar__bottom">
+            <a href="#">ACCOUNT</a>
+            <a href="#">ORDERS</a>
+            <a href="#">LOGOUT</a>
         </div>
     </div>
     <div class="container">
-        <div class="sidebar">
-            <div class="sidebar__top">
-                <h2>Categories</h2>
-                <ul class="category-list">
-                    <li class="category">Category</li>
-                    <li class="category">Category</li>
-                    <li class="category">Category</li>
-                    <li class="category">Category</li>
-                </ul>
+        <div class="topbar">
+            <div class="search">
+                <span class="material-symbols-outlined">search</span>
+                <input type="search">
             </div>
-            <div class="sidebar__bottom">
-                <a href="#">ACCOUNT</a>
-                <a href="#">ORDERS</a>
-                <a href="#">LOGOUT</a>
+            <div class="basket">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <i>n</i>
             </div>
         </div>
         <div class="content">
-            <ul class="featured-products">
-                <li class="featured-product">F PRODUCT</li>
-                <li class="featured-product">F PRODUCT</li>
-                <li class="featured-product">F PRODUCT</li>
-            </ul>
+            <div class="featured">
+                Featured
+                <ul class="featured-products">
+                    <li class="featured-product">
+                        <img class="product-image" src="static/2.jpg" alt="">
+                        <div class="product-info">
+                            <div class="product-title">
+                                Nice Coffee
+                            </div>
+                            <div class="product-price">
+                                10.90$
+                            </div>
+                        </div>
+                    </li>
+                    <li class="featured-product">
+                        <img class="product-image" src="static/1.jpg" alt="">
+                        <div class="product-info">
+                            <div class="product-title">
+                                Nice Coffee
+                            </div>
+                            <div class="product-price">
+                                10.90$
+                            </div>
+                        </div>
+                    </li>
+                    <li class="featured-product">
+                        <img class="product-image" src="static/2.jpg" alt="">
+                        <div class="product-info">
+                            <div class="product-title">
+                                Nice Coffee
+                            </div>
+                            <div class="product-price">
+                                10.90$
+                            </div>
+                        </div>
+                    </li>
+                    <li class="featured-product">
+                        <img class="product-image" src="static/1.jpg" alt="">
+                        <div class="product-info">
+                            <div class="product-title">
+                                Nice Coffee
+                            </div>
+                            <div class="product-price">
+                                10.90$
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
             <div class="welcome">
                 <div class="welcome__text">
                     Welcome to the jungle
